@@ -1,0 +1,206 @@
+{
+  "id": "mysimulator",
+  "name": "My Simulator",
+  "version": "1.0.0",
+  "description": "Description of My Simulator.",
+  "urls": [{
+    "type": "Home page",
+    "url": "http://mysimulator.org/"
+  }],
+  "image": {
+    "url": "ghcr.io/org/repo:1.0.0",
+    "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "format": {
+      "namespace": "EDAM",
+      "id": "format_3973",
+      "version": "1.2.0",
+      "supportedFeatures": []
+    },
+    "operatingSystemType": "Linux"
+  },
+  "cli": {
+    "packageRepository": "PyPI",
+    "package": "mysimulator",
+    "command": "mysimulator",
+    "installationInstructions": "https://mysimulator.org/installation.html"
+  },
+  "pythonApi": {
+    "package": "mysimulator",
+    "module": "mysimulator.biosimulators",
+    "installationInstructions": "https://mysimulator.org/installation.html"
+  },
+  "authors": [{
+    "firstName": "John",
+    "lastName": "Doe",
+    "identifiers": [{
+      "namespace": "orcid",
+      "id": "XXXX-XXXX-XXXX-XXXX",
+      "url": "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
+    }]
+  }],
+  "references": {
+    "identifiers": [{
+      "namespace": "pypi",
+      "id": "mysimulator",
+      "url": "https://pypi.org/project/mysimulator/"
+    }],
+    "citations": [{
+      "title": "My Simulator: a great simulator",
+      "authors": "John Doe",
+      "journal": "Journal",
+      "volume": "1",
+      "issue": "1",
+      "pages": "1-2",
+      "year": 2021,
+      "identifiers": [{
+        "namespace": "doi",
+        "id": "10.XXXX/XXXX",
+        "url": "https://doi.org/10.XXXX/XXXX"
+      }]
+    }]
+  },
+  "license": {
+    "namespace": "SPDX",
+    "id": "MIT"
+  },
+  "algorithms": [{
+    "id": "cvode",
+    "name": "C-language Variable-coefficient Ordinary Differential Equation solver",
+    "kisaoId": {
+      "namespace": "KISAO",
+      "id": "KISAO_0000019"
+    },
+    "modelingFrameworks": [{
+      "namespace": "SBO",
+      "id": "SBO_0000293"
+    }],
+    "modelFormats": [{
+      "namespace": "EDAM",
+      "id": "format_2585",
+      "version": "L3V2",
+      "supportedFeatures": []
+    }],
+    "modelChangePatterns": [
+        {
+          "name": "Change component attributes",
+          "types": ["SedAttributeModelChange", "SedComputeAttributeChangeModelChange", "SedSetValueAttributeModelChange"],
+          "target": {
+            "value": "//*/@*",
+            "grammar": "XPath"
+          }
+        },
+        {
+          "name": "Add components",
+          "types": ["SedAddXmlModelChange"],
+          "target": {
+            "value": "//*",
+            "grammar": "XPath"
+          }
+        },
+        {
+          "name": "Remove components",
+          "types": ["SedRemoveXmlModelChange"],
+          "target": {
+            "value": "//*",
+            "grammar": "XPath"
+          }
+        },
+        {
+          "name": "Change components",
+          "types": ["SedChangeXmlModelChange"],
+          "target": {
+            "value": "//*",
+            "grammar": "XPath"
+          }
+        }
+      ],
+    "simulationFormats": [{
+      "namespace": "EDAM",
+      "id": "format_3685",
+      "version": "L1V3",
+      "supportedFeatures": []
+    }],
+    "simulationTypes": ["SedUniformTimeCourseSimulation"],
+    "archiveFormats": [{
+      "namespace": "EDAM",
+      "id": "format_3686",
+      "version": "1",
+      "supportedFeatures": []
+    }],
+    "citations": [{
+      "title": "CVODE, a stiff/nonstiff ODE solver in C",
+      "authors": "Scott D. Cohen, Alan C. Hindmarsh & Paul F. Dubois",
+      "journal": "Computers in Physics",
+      "volume": "10",
+      "issue": "2",
+      "pages": "138-143",
+      "year": 1996,
+      "identifiers": [{
+        "namespace": "doi",
+        "id": "10.1063/1.4822377",
+        "url": "https://doi.org/10.1063/1.4822377"
+      }]
+    }],
+    "parameters": [{
+      "kisaoId": {
+        "namespace": "KISAO",
+        "id": "KISAO_0000209"
+      },
+      "id": "relative_tolerance",
+      "name": "Relative tolerance",
+      "type": "float",
+      "value": "0.000001",
+      "recommendedRange": null,
+      "availableSoftwareInterfaceTypes": ["library", "command-line application", "desktop application", "BioSimulators Docker image"]
+    }],
+    "outputDimensions": [{
+      "namespace": "SIO",
+      "id": "SIO_000418"
+    }],
+    "outputVariablePatterns": [
+      {
+          "name": "time",
+          "symbol": {
+            "value": "time",
+            "namespace": "urn:sedml:symbol"
+          }
+      },
+      {
+        "name": "species concentrations",
+        "target": {"value": "/sbml:sbml/sbml:model/sbml:listOfSpecies/sbml:species", "grammar": "XPath"}
+      },
+      {
+        "name": "parameter values",
+        "target": {"value": "/sbml:sbml/sbml:model/sbml:listOfParameters/sbml:parameter", "grammar": "XPath"}
+      }
+    ],
+    "availableSoftwareInterfaceTypes": ["library", "command-line application", "desktop application", "BioSimulators Docker image"],
+    "dependencies": [{
+      "name": "SUNDIALS",
+      "version": null,
+      "required": true,
+      "freeNonCommercialLicense": true,
+      "url": "https://computing.llnl.gov/projects/sundials"
+    }]
+  }],
+  "interfaceTypes": ["library", "command-line application", "desktop application", "BioSimulators Docker image"],
+  "supportedOperatingSystemTypes": ["platform-independent"],
+  "supportedProgrammingLanguages": [{
+    "namespace": "Linguist",
+    "id": "Python"
+  }],
+  "funding": [{
+    "funder": {
+      "namespace": "FunderRegistry",
+      "id": "100000057"
+    },
+    "grant": "R01-GMXXXXXX",
+    "url": "https://grantome.com/grant/NIH/R01-GMXXXXXX"
+  }],
+  "biosimulators": {
+    "specificationVersion": "1.0.0",
+    "imageVersion": "1.0.0",
+    "validated": false,
+    "validationTests": null
+  }
+}
