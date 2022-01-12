@@ -43,6 +43,8 @@ RUN apt-get update -y \
     && apt-get install -y --no-install-recommends libfreetype6 \
     && rm -rf /var/lib/apt/lists/*
 
+RUN pip install python-libsbml
+
 # Copy code for command-line interface into image and install it
 COPY . /root/Biosimulators_mpbn
 RUN pip install /root/Biosimulators_mpbn \
@@ -54,5 +56,5 @@ ENV VERBOSE=0 \
 # Declare the environment variables that the simulation tool supports (e.g., ALGORITHM_SUBSTITUTION_POLICY) and their default values
 
 # Entrypoint
-ENTRYPOINT ["biosimulators-{my-simulator}"]
+ENTRYPOINT ["biosimulators-mpbn"]
 CMD []
