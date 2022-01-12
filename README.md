@@ -4,8 +4,8 @@
 [![Test coverage](https://codecov.io/gh/<owner>/<repo>/branch/dev/graph/badge.svg)](https://codecov.io/gh/<owner>/<repo>)
 [![All Contributors](https://img.shields.io/github/all-contributors/<owner>/<repo>/HEAD)](#contributors-)
 
-# MySimulator
-BioSimulators-compliant command-line interface to the [MySimulator](https://<url.for.my.simulator>/) simulation program.
+# Biosimulators_mpbn
+BioSimulators-compliant command-line interface to the [mpbn](https://mpbn.readthedocs.io) Most Permissive Boolean networks analysis program.
 
 ## Installation
 
@@ -23,9 +23,9 @@ docker pull <registry>/<organization>/<repository>
 
 ### Local usage
 ```
-usage: biosimulators-<my-simulator> [-h] [-d] [-q] -i ARCHIVE [-o OUT_DIR] [-v]
+usage: biosimulators-mpbn [-h] [-d] [-q] -i ARCHIVE [-o OUT_DIR] [-v]
 
-BioSimulators-compliant command-line interface to the <MySimulator> simulation program <https://url.for.my.simulator>.
+BioSimulators-compliant command-line interface to the <mpbn> program <https://mpbn.readthedocs.io>.
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -59,13 +59,13 @@ docker run \
 Documentation is available at <documentation-url>.
 
 ## License
-This package is released under the [<License name (e.g., MIT)> license](LICENSE).
+This package is released under the [MIT license](LICENSE).
 
 ## Development team
-This package was developed by [<authors>](<https://url.for.authors>) with assistance from the contributors listed [here](CONTRIBUTORS.md).
+This package was developed by [Loïc Paulevé](<https://loicpauleve.name>) with assistance from the contributors listed [here](CONTRIBUTORS.md).
 
-## Contributing to B<my-simulator>
-We enthusiastically welcome contributions to <my-simulator>! Please see the [guide to contributing](CONTRIBUTING.md) and the [developer's code of conduct](CODE_OF_CONDUCT.md).
+## Contributing to Biosimulators_mpbn
+We enthusiastically welcome contributions to Biosimulators_mpbn! Please see the [guide to contributing](CONTRIBUTING.md) and the [developer's code of conduct](CODE_OF_CONDUCT.md).
 
 ## Questions and comments
-Please contact the [<authors>](mailto:<authors@url.for.authors>) with any questions or comments.
+Please open an issue or contact [Loïc Paulevé](mailto:loic.pauleve@labri.fr) with any questions or comments.
